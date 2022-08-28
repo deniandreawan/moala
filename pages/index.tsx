@@ -2,17 +2,7 @@ import type { NextPage } from "next";
 import Image from "next/future/image";
 import Head from "next/head";
 import Link from "next/link";
-// import onlineDemo from "public/assets/demos/online.png";
-// import inPersonDemo from "public/assets/demos/in-person.png";
-// import quickDemo from "public/assets/demos/quick.png";
-// import tipsDemo from "public/assets/demos/tips.png";
-// import productsDemo from "public/assets/demos/products.png";
 import ipadDemo from "../public/assets/demos/ipad.png";
-// import rapydLogo from "public/assets/rapyd-logo.png";
-// import MajesticonsBriefcaseLine from "~icons/majesticons/briefcase-line";
-// import MajesticonsGlobeEarth2Line from "~icons/majesticons/globe-earth-2-line";
-// import MajesticonsDollarCircleLine from "~icons/majesticons/dollar-circle-line";
-// import MajesticonsMoneyHandLine from "~icons/majesticons/money-hand-line";
 
 const Home: NextPage = () => {
   return (
