@@ -1,26 +1,58 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-height: 100vh;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overscroll-behavior-y: contain;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.min-h-screen {
+  min-height: var(--app-height);
 }
 
-* {
-  box-sizing: border-box;
+.bg-gradient {
+  @apply bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.btn {
+  @apply w-full rounded-md border-2 bg-blue-600 border-blue-600 leading-10 font-semibold text-white hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500 transition delay-100 ease-linear text-sm shadow-tiny;
+}
+
+.btn:disabled {
+  @apply cursor-default opacity-80 pointer-events-none;
+}
+
+.input {
+  @apply text-sm py-2.5 border-2 mt-1 rounded-md w-full border-gray-200 focus:bg-blue-50 transition-colors delay-100 ease-linear focus:ring-transparent focus:border-blue-500;
+}
+
+.btn.loading {
+  @apply text-[0] leading-[0] align-top;
+}
+
+.btn.loading:before {
+  content: "";
+  @apply animate-spin w-5 h-5 rounded-full border-2 border-r-white border-transparent my-2.5 mx-auto block;
+}
+
+input[type="file"]::file-selector-button {
+  @apply bg-gray-100;
+  -webkit-margin-start: -1rem;
+  -webkit-margin-end: 1rem;
+  border: 0;
+  color: black;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-inline-end: 1rem;
+  margin-inline-start: -1rem;
+  padding: 0.625rem 1rem 0.625rem 2rem;
+}
+
+[type="file"]:focus {
+  @apply outline-none;
 }
