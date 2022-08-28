@@ -15,7 +15,7 @@ body {
 }
 
 .bg-gradient {
-  @apply bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500;
+  @apply bg-blue-50;
 }
 
 .btn {
@@ -23,7 +23,7 @@ body {
 }
 
 .btn:disabled {
-  @apply cursor-default opacity-80 pointer-events-none;
+  @apply cursor-default opacity-40 pointer-events-none;
 }
 
 .input {

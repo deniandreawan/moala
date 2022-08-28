@@ -13,6 +13,7 @@ import {
   ShoppingBagIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 const TopBar: React.FC<{ className?: string }> = ({ className }) => {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -20,9 +21,7 @@ const TopBar: React.FC<{ className?: string }> = ({ className }) => {
 
   return (
     <div className={classNames("p-6 flex justify-between", className)}>
-      <div className="flex items-center gap-2">
-        <span className="font-bold text-blue-600 cursor-default">Moala</span>
-      </div>
+      <Image src="/assets/logo.svg" alt="Moala Logo" width={35} height={35} />
       <div className="text-base flex gap-3">
         <button
           className="relative"
@@ -99,7 +98,7 @@ const AppLayout: React.FC<{ children: JSX.Element }> = ({ children }) => {
             <Link key={link.link} href={link.link}>
               <a
                 className={classNames("flex gap-3 items-center", {
-                  "text-blue-700": router.pathname === link.link,
+                  "text-blue-600": router.pathname === link.link,
                 })}
               >
                 <link.icon className="h-6 w-6" />
