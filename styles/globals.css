@@ -14,8 +14,12 @@ body {
   min-height: var(--app-height);
 }
 
-.bg-gradient {
+.bg {
   @apply bg-blue-50;
+}
+
+.bg-gradient {
+  @apply bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500;
 }
 
 .btn {

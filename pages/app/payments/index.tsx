@@ -1,7 +1,7 @@
-import { NextPageWithLayout } from "../../../types/types";
-import AppLayout from "../../../components/layouts/app";
-import { InboxIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { InboxIcon } from "@heroicons/react/24/outline";
+import { NextPageWithLayout } from "@typings/types";
+import AppLayout from "@components/layouts/app";
 
 const Payments: NextPageWithLayout = () => {
   return (

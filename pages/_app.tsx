@@ -2,9 +2,9 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
-import "../styles/globals.css";
+import "@styles/globals.css";
+import { AppPropsWithLayout } from "@typings/types";
 import { useEffect } from "react";
-import { AppPropsWithLayout } from "../types/types";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
