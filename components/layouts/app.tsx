@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import classNames from "classnames";
 import { Menu } from "@headlessui/react";
 import {
@@ -13,7 +14,6 @@ import {
   ShoppingBagIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-import Image from "next/image";
 
 const TopBar: React.FC<{ className?: string }> = ({ className }) => {
   const [notificationsOpen, setNotificationsOpen] = useState(false);

@@ -1,12 +1,12 @@
-import AppLayout from "../../components/layouts/app";
-import classNames from "classnames";
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
-import { NextPageWithLayout } from "../../types/types";
-import Select from "react-select";
 import { useState } from "react";
-import { theme, styles } from "../../lib/shared";
-import payment_methods_categories from "../../lib/data/payment_methods_categories.json";
-import currencies from "../../lib/data/currencies.json";
+import classNames from "classnames";
+import Select from "react-select";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { NextPageWithLayout } from "@typings/types";
+import { theme, styles } from "@lib/shared";
+import AppLayout from "@components/layouts/app";
+import payment_methods_categories from "@lib/data/payment_methods_categories.json";
+import currencies from "@lib/data/currencies.json";
 
 type FormValues = {
   payment_methods_categories: string[];

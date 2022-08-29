@@ -1,14 +1,14 @@
-import classNames from "classnames";
-import AppLayout from "../../../components/layouts/app";
-import CurrencyInput, { formatValue } from "react-currency-input-field";
-import { NextPageWithLayout } from "../../../types/types";
-import currencies from "../../../lib/data/currencies.json";
 import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import Select, { SingleValueProps, ValueContainerProps } from "react-select";
-import Input from "../../../components/input";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import { theme } from "../../../lib/shared";
+import CurrencyInput, { formatValue } from "react-currency-input-field";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import AppLayout from "@components/layouts/app";
+import Input from "@components/input";
+import { NextPageWithLayout } from "@typings/types";
+import currencies from "@lib/data/currencies.json";
+import { theme } from "@lib/shared";
 
 const SingleValue = (props: SingleValueProps<any>) => (
   <>
