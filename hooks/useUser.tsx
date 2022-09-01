@@ -10,8 +10,7 @@ export default function useUser({
   const statusLoading = status === "loading";
 
   useEffect(() => {
-    if (!redirectTo || session) return;
-
+    if (!redirectTo) return;
     if (
       (redirectTo && !redirectIfFound && session === null) ||
       (redirectIfFound && session !== null)
