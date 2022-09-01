@@ -41,7 +41,11 @@ const TopBar: React.FC<{ className?: string }> = ({ className }) => {
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    onClick={() => signOut()}
+                    onClick={() =>
+                      signOut({
+                        callbackUrl: `${window.location.origin}/login`,
+                      })
+                    }
                     className={classNames(
                       "group flex w-full items-center gap-1 rounded-md px-2 py-2 text-sm font-bold",
                       {

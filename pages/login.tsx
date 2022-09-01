@@ -28,7 +28,10 @@ const Login: NextPageWithLayout = () => {
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setLoading(true);
     try {
-      await signIn("email", { email: data.email });
+      await signIn("email", {
+        email: data.email,
+        callbackUrl: `${window.location.origin}/app`,
+      });
     } catch (error) {
       if (error instanceof FetchError) {
         setError("email", { message: error.data.message });

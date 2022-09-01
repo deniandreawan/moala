@@ -23,7 +23,7 @@ const Home: NextPage = () => {
             />
             <span className="font-bold text-lg cursor-default">Moala</span>
           </div>
-          <Link href="/app">
+          <Link href="/login">
             <a className="rounded-md border-2 border-blue-200 bg-blue-200 font-semibold text-blue-600 hover:bg-blue-700 hover:text-white hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500 transition delay-100 ease-linear text-sm py-2 px-5">
               Get started
             </a>
@@ -39,7 +39,7 @@ const Home: NextPage = () => {
               payment processing toolkit. Charge cards from all major card
               networks or create and share gorgeous payment links to pay online.
             </p>
-            <Link href="/app">
+            <Link href="/login">
               <a className="rounded-md border-2 border-blue-600 bg-blue-600 font-semibold text-white hover:bg-blue-700 hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500 transition delay-100 ease-linear text-sm py-2 px-5 inline-block">
                 Get started
               </a>
