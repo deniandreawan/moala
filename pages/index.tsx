@@ -23,9 +23,9 @@ const Home: NextPage = () => {
             />
             <span className="font-bold text-lg cursor-default">Moala</span>
           </div>
-          <Link href="/login">
+          <Link href="/app">
             <a className="rounded-md border-2 border-blue-200 bg-blue-200 font-semibold text-blue-600 hover:bg-blue-700 hover:text-white hover:border-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-blue-500 transition delay-100 ease-linear text-sm py-2 px-5">
-              Login
+              Get started
             </a>
           </Link>
         </nav>

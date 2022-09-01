@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { signOut } from "next-auth/react";
 import classNames from "classnames";
 import { Menu } from "@headlessui/react";
 import {
@@ -14,6 +15,7 @@ import {
   ShoppingBagIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
+import useUser from "@hooks/useUser";
 
 const TopBar: React.FC<{ className?: string }> = ({ className }) => {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -39,6 +41,7 @@ const TopBar: React.FC<{ className?: string }> = ({ className }) => {
               <Menu.Item>
                 {({ active }) => (
                   <button
+                    onClick={() => signOut()}
                     className={classNames(
                       "group flex w-full items-center gap-1 rounded-md px-2 py-2 text-sm font-bold",
                       {
@@ -60,6 +63,9 @@ const TopBar: React.FC<{ className?: string }> = ({ className }) => {
 };
 
 const AppLayout: React.FC<{ children: JSX.Element }> = ({ children }) => {
+  const { session, statusLoading } = useUser({
+    redirectTo: "/login",
+  });
   const router = useRouter();
   const links = [
     {
@@ -88,6 +94,15 @@ const AppLayout: React.FC<{ children: JSX.Element }> = ({ children }) => {
       icon: Cog6ToothIcon,
     },
   ];
+
+  if (!session && statusLoading) {
+    return (
+      <div className="flex justify-center items-center flex-col min-h-screen relative">
+        <div className="animate-spin spinner" />
+        <h3 className="mt-4 text-sm font-semibold">Please wait</h3>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen relative flex">

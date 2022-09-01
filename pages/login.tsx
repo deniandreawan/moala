@@ -1,8 +1,11 @@
 import { useState } from "react";
 import classNames from "classnames";
+import { signIn } from "next-auth/react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import Input from "@components/input";
 import GuestLayout from "@components/layouts/guest";
+import { FetchError } from "@lib/fetch";
+import useUser from "@hooks/useUser";
 import { NextPageWithLayout } from "@typings/types";
 
 type FormValues = {
@@ -14,15 +17,24 @@ const Login: NextPageWithLayout = () => {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<FormValues>();
   const [loading, setLoading] = useState(false);
+  const {} = useUser({
+    redirectTo: "/app",
+    redirectIfFound: true,
+  });
 
-  const onSubmit: SubmitHandler<FormValues> = async () => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setLoading(true);
     try {
-      console.log("success");
+      await signIn("email", { email: data.email });
     } catch (error) {
-      console.error(error);
+      if (error instanceof FetchError) {
+        setError("email", { message: error.data.message });
+      } else {
+        console.error(error);
+      }
     }
     setLoading(false);
   };

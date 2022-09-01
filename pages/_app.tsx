@@ -6,6 +6,7 @@ import "@styles/globals.css";
 import { AppPropsWithLayout } from "@typings/types";
 import { useEffect } from "react";
 import Head from "next/head";
+import { SessionProvider } from "next-auth/react";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
@@ -23,7 +24,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   }, []);
 
   return (
-    <>
+    <SessionProvider session={pageProps.session}>
       <Head>
         <title>Moala</title>
         <meta
@@ -32,7 +33,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         />
       </Head>
       {getLayout(<Component {...pageProps} />)}
-    </>
+    </SessionProvider>
   );
 }
 
